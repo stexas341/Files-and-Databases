@@ -1,0 +1,48 @@
+<h1>Add New Car</h1>
+<form id="addCarForm" action="AddCar" method="POST">
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required>
+    <br><br>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <br><br>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" required>
+    <br><br>
+
+    <label for="autonomy">Autonomy (in km):</label>
+    <input type="number" id="autonomy" name="autonomy" required>
+    <br><br>
+
+<!--    <label for="licensePlate">License Plate:</label>
+    <input type="text" id="licensePlate" name="licensePlate" required>
+    <br><br>-->
+
+    <label for="vehicleType">Vehicle Type:</label>
+    <select id="vehicleType" name="vehicleType" required>
+        <option value="SUV">SUV</option>
+        <option value="City Car">City Car</option>
+        <option value="Van">Van</option>
+        <option value="Cabrio">Cabrio</option>
+        <option value="SuperCar">SuperCar</option>
+        <option value="HyperCar">HyperCar</option>
+        <!-- Add more options as needed -->
+    </select>
+    <br><br>
+
+    <label for="passengers">Number of Passengers:</label>
+    <input type="number" id="passengers" name="passengers" required>
+    <br><br>
+
+    <label for="dailyRentalCost">Daily Rental Cost:</label>
+    <input type="number" id="dailyRentalCost" name="dailyRentalCost" required>
+    <br><br>
+
+    <label for="insuranceCost">Insurance Cost:</label>
+    <input type="number" id="insuranceCost" name="insuranceCost" required>
+    <br><br>
+
+    <input type="submit" value="Add Car">
+</form>

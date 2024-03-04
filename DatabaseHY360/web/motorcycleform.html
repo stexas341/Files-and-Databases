@@ -1,0 +1,39 @@
+<h1>Add New Motorcycle</h1>
+<form id="addMotorcycleForm" action="AddMotorcycle" method="POST">
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required>
+    <br><br>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <br><br>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" required>
+    <br><br>
+
+    <label for="autonomy">Autonomy (in km):</label>
+    <input type="number" id="autonomy" name="autonomy" required>
+    <br><br>
+
+    <label for="vehicleType">Motorcycle Type:</label>
+    <select id="vehicleType" name="vehicleType" required>
+        <option value="adventure">Adventure</option>
+        <option value="Sport">Sport</option>
+        <option value="Cruiser">Cruiser</option>
+        <option value="Touring">Touring</option>
+        <option value="Classic">Classic</option>
+        <!-- Add more options as needed -->
+    </select>
+    <br><br>
+
+    <label for="dailyRentalCost">Daily Rental Cost:</label>
+    <input type="number" id="dailyRentalCost" name="dailyRentalCost" required>
+    <br><br>
+
+    <label for="insuranceCost">Insurance Cost:</label>
+    <input type="number" id="insuranceCost" name="insuranceCost" required>
+    <br><br>
+
+    <input type="submit" value="Add Motorcycle">
+</form>

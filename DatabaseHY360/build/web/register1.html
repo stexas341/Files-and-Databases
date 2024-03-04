@@ -1,0 +1,82 @@
+<h1><u>Register Form</u></h1>
+<form id="addRenter" action="AddRenter" method="POST">  
+    <label for="vehicle_id">Vehicle id:</label>
+    <input type="text" id="id" name="id" required>
+    <br><br>
+    
+    
+    <label for="FirstName">First Name:</label>
+    <input type="text" id="FirstName" name="FirstName" required>
+    <br><br>
+
+    <label for="LastName">Last Name:</label>
+    <input type="text" id="LastName" name="LastName" required>
+    <br><br>
+
+    <label for="Birthday">Birthday:</label>
+    <input type="date" id="Birthday" name="Birthday" min="1980-01-01" required>
+    <span id="dateError1" style="color: red;"></span>
+    <br><br>
+
+    <label for="addr" id="add">Address:</label>
+    <input type="text" id="addr" name="add" pattern=".{5,50}" title="5 to 50 characters">
+    <br><br>
+
+    
+    <label for="CreditCard">Credit Card Number:</label>
+    <input type="text" id="CreditCard" name="CreditCard" pattern="[0-9]{16}" title="16 digits required" required>
+    <br><br>
+    <label for="Start">Start Date:</label>
+    <input type="date" id="Start" name="Start" required>
+    <br><br>
+
+    <label for="End">End Date:</label>
+    <input type="date" id="End" name="End" min="1980-01-01" required>
+    <span id="dateError" style="color: red;"></span>
+    
+    <br><br>
+    <input type="submit" value="Add Renter">
+    <script>
+    var startDateInput = document.getElementById('Start');
+    var endDateInput = document.getElementById('End');
+
+    function checkDates() {
+        var startDate = startDateInput.value;
+        var endDate = endDateInput.value;
+
+        if (endDate < startDate) {
+            endDateInput.setCustomValidity('End Date must be equal to or later than Start Date');
+        } else {
+            endDateInput.setCustomValidity('');
+        }
+        
+    }
+    var BirthdayInput = document.getElementById('Birthday');
+        function checkage() {
+        var age = calculateAge(BirthdayInput.value);
+
+        if (age < 16) {
+            BirthdayInput.setCustomValidity('You must be at least 16 years old');
+        } else {
+            BirthdayInput.setCustomValidity('');
+        }
+    }
+    function calculateAge(birthday) {
+    var birthdayDate = new Date(birthday);
+    var currentDate = new Date();
+    var age = currentDate.getFullYear() - birthdayDate.getFullYear();
+
+    if (currentDate.getMonth() < birthdayDate.getMonth() ||
+        (currentDate.getMonth() === birthdayDate.getMonth() && currentDate.getDate() < birthdayDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}    
+    BirthdayInput.addEventListener('change', checkage);
+    startDateInput.addEventListener('change', checkDates);
+    endDateInput.addEventListener('change', checkDates);
+    </script>
+    </form>
+
+<div id="error"></div>
